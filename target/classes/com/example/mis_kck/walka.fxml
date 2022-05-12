@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../../images/tlo_arena.jpg" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="93.0" layoutY="145.0">
+         <image>
+            <Image url="@../../../images/postac_1.jfif" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="422.0" layoutY="147.0">
+         <image>
+            <Image url="@../../../images/postac_2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="158.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@../../../images/paski_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="158.0" layoutX="428.0" layoutY="14.0">
+         <image>
+            <Image url="@../../../images/paski_2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="600.0" layoutY="337.0">
+         <image>
+            <Image url="@../../../images/pasek_akcji.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
