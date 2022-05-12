@@ -21,12 +21,12 @@
             <Image url="@kerator_paski.png" />
          </image>
       </ImageView>
-      <ImageView accessibleRole="BUTTON" fitHeight="161.0" fitWidth="161.0" layoutX="445.0" layoutY="381.0">
+      <ImageView fx:id="confirmButton" accessibleRole="BUTTON" fitHeight="161.0" fitWidth="161.0" layoutX="445.0" layoutY="381.0">
          <image>
             <Image url="@confirm.png" />
          </image>
       </ImageView>
-      <ImageView accessibleRole="BUTTON" fitHeight="161.0" fitWidth="161.0" layoutX="620.0" layoutY="380.0">
+      <ImageView fx:id="declineButton" accessibleRole="BUTTON" fitHeight="161.0" fitWidth="161.0" layoutX="620.0" layoutY="380.0">
          <image>
             <Image url="@decline.png" />
          </image>
