@@ -9,22 +9,22 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
-            <Image url="@tlo.png" />
+            <Image url="@../../../images/tlo.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="301.0" fitWidth="146.0" layoutX="65.0" layoutY="50.0">
          <image>
-            <Image url="@postac_1.jfif" />
+            <Image url="@../../../images/postac_1.jfif" />
          </image>
       </ImageView>
       <ImageView fitHeight="193.0" fitWidth="334.0" layoutX="235.0" layoutY="50.0">
          <image>
-            <Image url="@kerator_paski.png" />
+            <Image url="@../../../images/kerator_paski.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="369.0" layoutY="286.0">
          <image>
-            <Image url="@kreator_przyciski.png" />
+            <Image url="@../../../images/kreator_przyciski.png" />
          </image>
       </ImageView>
    </children>
