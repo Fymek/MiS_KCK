@@ -26,11 +26,6 @@
             <Image url="@../../../images/buttons/decline.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="500.0" fitWidth="331.0" layoutX="15.0" layoutY="50.0">
-         <image>
-            <Image url="@../../../images/postac1.png" />
-         </image>
-      </ImageView>
       <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="50.0">
          <image>
             <Image url="@../../../images/buttons/plus.png" />
@@ -79,6 +74,11 @@
       <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="131.0">
          <image>
             <Image url="@../../../images/buttons/minus.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="496.0" fitWidth="427.0" layoutX="29.0" layoutY="52.0">
+         <image>
+            <Image url="@../../../images/postac_2.png.png" />
          </image>
       </ImageView>
    </children>

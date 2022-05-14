@@ -25,12 +25,12 @@ public class CreatorController {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
-    @FXML
-    protected void onConfirmButtonClick(Stage stage) throws IOException {
-        panel = new Pane(getClass().getResource("walka.fxml"));
-        Scene scene = new Scene(panel);
-        stage.setTitle("Widły i Kapcie!");
-        stage.setScene(scene);
-        stage.show();
-    }
+//    @FXML
+//    protected void onConfirmButtonClick(Stage stage) throws IOException {
+//        panel = new Pane(getClass().getResource("walka.fxml"));
+//        Scene scene = new Scene(panel);
+//        stage.setTitle("Widły i Kapcie!");
+//        stage.setScene(scene);
+//        stage.show();
+//    }
 }
