@@ -65,8 +65,13 @@ public class CreatorController  implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonPlus = new ArrayList<>(Arrays.asList(strplus,vitplus,staplus,agiplus,defplus));
+        buttonMinus = new ArrayList<>(Arrays.asList(strminus,vitminus,staminus,agiminus,defminus));
         buttonPlus.forEach(button ->{
             plusButton(button);
+            button.setFocusTraversable(false);
+        });
+        buttonMinus.forEach(button ->{
+            minusButton(button);
             button.setFocusTraversable(false);
         });
     }
@@ -111,11 +116,48 @@ public class CreatorController  implements Initializable {
 
         });
     }
-    private void minusButton(Button button) {
+    private void minusButton(Button button ) {
+
         button.setOnMouseClicked(mouseEvent -> {
+            if(total<10){
+                if (vitminus.equals(button)) {
+                    byte a = postac.getStat_HP();
+                    a--;
+                    postac.setStat_HP(a);
+                    total++;
+                    vitPoints.setText("" + postac.getStat_HP());
+                } else if (strminus.equals(button)) {
+                    byte b = postac.getStat_SILA();
+                    b--;
+                    postac.setStat_SILA(b);
+                    total++;
+                    strPoints.setText("" + postac.getStat_SILA());
+                } else if (staminus.equals(button)) {
+                    byte c = postac.getStat_ENERGIA();
+                    c--;
+                    postac.setStat_ENERGIA(c);
+                    total++;
+                    staPoints.setText("" + postac.getStat_ENERGIA());
+                } else if (agiminus.equals(button)) {
+                    byte d = postac.getStat_ZWINNOSC();
+                    d--;
+                    postac.setStat_ZWINNOSC(d);
+                    total++;
+                    agiPoints.setText("" + postac.getStat_ZWINNOSC());
+                } else if (defminus.equals(button)) {
+                    byte e = postac.getStat_OBRONA();
+                    e--;
+                    postac.setStat_OBRONA(e);
+                    defPoints.setText("" + postac.getStat_OBRONA());
+                    total++;
+                }
+                totalPoints.setText(""+total);
+
+            }
 
         });
     }
+
 
 
 
