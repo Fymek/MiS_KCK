@@ -59,6 +59,11 @@ public class CreatorController  implements Initializable {
     private Text totalPoints;
 
     private byte total = 10;
+
+    public Postac getPostac() {
+        return postac;
+    }
+
     Postac postac = new Postac();
     ArrayList<Button> buttonPlus;
     ArrayList<Button> buttonMinus;
@@ -122,34 +127,44 @@ public class CreatorController  implements Initializable {
             if(total<10){
                 if (vitminus.equals(button)) {
                     byte a = postac.getStat_HP();
-                    a--;
-                    postac.setStat_HP(a);
-                    total++;
-                    vitPoints.setText("" + postac.getStat_HP());
+                    if(a>0) {
+                        a--;
+                        postac.setStat_HP(a);
+                        total++;
+                        vitPoints.setText("" + postac.getStat_HP());
+                    }
                 } else if (strminus.equals(button)) {
                     byte b = postac.getStat_SILA();
-                    b--;
-                    postac.setStat_SILA(b);
-                    total++;
-                    strPoints.setText("" + postac.getStat_SILA());
+                    if(b>0) {
+                        b--;
+                        postac.setStat_SILA(b);
+                        total++;
+                        strPoints.setText("" + postac.getStat_SILA());
+                    }
                 } else if (staminus.equals(button)) {
                     byte c = postac.getStat_ENERGIA();
                     c--;
-                    postac.setStat_ENERGIA(c);
-                    total++;
-                    staPoints.setText("" + postac.getStat_ENERGIA());
+                    if(c>0) {
+                        postac.setStat_ENERGIA(c);
+                        total++;
+                        staPoints.setText("" + postac.getStat_ENERGIA());
+                    }
                 } else if (agiminus.equals(button)) {
                     byte d = postac.getStat_ZWINNOSC();
                     d--;
-                    postac.setStat_ZWINNOSC(d);
-                    total++;
-                    agiPoints.setText("" + postac.getStat_ZWINNOSC());
+                    if(d>0) {
+                        postac.setStat_ZWINNOSC(d);
+                        total++;
+                        agiPoints.setText("" + postac.getStat_ZWINNOSC());
+                    }
                 } else if (defminus.equals(button)) {
                     byte e = postac.getStat_OBRONA();
                     e--;
-                    postac.setStat_OBRONA(e);
-                    defPoints.setText("" + postac.getStat_OBRONA());
-                    total++;
+                    if(e>0) {
+                        postac.setStat_OBRONA(e);
+                        defPoints.setText("" + postac.getStat_OBRONA());
+                        total++;
+                    }
                 }
                 totalPoints.setText(""+total);
 

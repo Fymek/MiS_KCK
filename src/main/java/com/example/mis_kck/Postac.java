@@ -6,7 +6,7 @@ public class Postac {
         MEDIUM,
         HIGH
     }
-    private byte stat_HP = 100;
+    private byte stat_HP = 1;
     private byte stat_SILA = 1;
     private byte stat_ENERGIA = 1;
     private byte stat_ZWINNOSC = 1;
@@ -26,7 +26,7 @@ public class Postac {
     }
 
     public void setStat_HP(byte stat_HP) {
-        this.stat_HP = (byte) (stat_HP * 10);
+        this.stat_HP = stat_HP;
     }
 
     public byte getStat_SILA() {

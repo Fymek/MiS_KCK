@@ -11,7 +11,7 @@ import java.io.IOException;
 public class CreatorApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("kreator.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("kreator_1.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
