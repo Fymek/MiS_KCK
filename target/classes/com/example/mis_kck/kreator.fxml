@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mis_kck.CreatorController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
@@ -31,56 +35,68 @@
             <Image url="@../../../images/postac1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="strplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="50.0">
-         <image>
-            <Image url="@../../../images/buttons/plus.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="strminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="50.0">
-         <image>
-            <Image url="@../../../images/buttons/minus.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="vitplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="172.0">
-         <image>
-            <Image url="@../../../images/buttons/plus.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="vitminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="172.0">
-         <image>
-            <Image url="@../../../images/buttons/minus.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="staplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="216.0">
-         <image>
-            <Image url="@../../../images/buttons/plus.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="staminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="216.0">
-         <image>
-            <Image url="@../../../images/buttons/minus.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="agiplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="92.0">
-         <image>
-            <Image url="@../../../images/buttons/plus.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="agiminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="92.0">
-         <image>
-            <Image url="@../../../images/buttons/minus.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="defplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="131.0">
-         <image>
-            <Image url="@../../../images/buttons/plus.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="defminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="131.0">
-         <image>
-            <Image url="@../../../images/buttons/minus.png" />
-         </image>
-      </ImageView>
+<!--      <ImageView fx:id="strplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="50.0">-->
+<!--         <image>-->
+<!--            <Image url="@../../../images/buttons/plus.png" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+<!--      <ImageView fx:id="strminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="50.0">-->
+<!--         <image>-->
+<!--            <Image url="@../../../images/buttons/minus.png" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+<!--      <ImageView fx:id="vitplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="172.0">-->
+<!--         <image>-->
+<!--            <Image url="@../../../images/buttons/plus.png" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+<!--      <ImageView fx:id="vitminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="172.0">-->
+<!--         <image>-->
+<!--            <Image url="@../../../images/buttons/minus.png" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+<!--      <ImageView fx:id="staplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="216.0">-->
+<!--         <image>-->
+<!--            <Image url="@../../../images/buttons/plus.png" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+<!--      <ImageView fx:id="staminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="216.0">-->
+<!--         <image>-->
+<!--            <Image url="@../../../images/buttons/minus.png" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+<!--      <ImageView fx:id="agiplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="92.0">-->
+<!--         <image>-->
+<!--            <Image url="@../../../images/buttons/plus.png" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+<!--      <ImageView fx:id="agiminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="92.0">-->
+<!--         <image>-->
+<!--            <Image url="@../../../images/buttons/minus.png" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+<!--      <ImageView fx:id="defplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="131.0">-->
+<!--         <image>-->
+<!--            <Image url="@../../../images/buttons/plus.png" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+<!--      <ImageView fx:id="defminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="131.0">-->
+<!--         <image>-->
+<!--            <Image url="@../../../images/buttons/minus.png" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+
+      <Button fx:id="strplus" layoutX="536.0" layoutY="50.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" />
+      <Button fx:id="strminus" layoutX="497.0" layoutY="50.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" />
+      <Button fx:id="vitplus" layoutX="536.0" layoutY="172.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" />
+      <Button fx:id="vitminus" layoutX="497.0" layoutY="172.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" />
+      <Button fx:id="staplus" layoutX="536.0" layoutY="216.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" />
+      <Button fx:id="staminus" layoutX="497.0" layoutY="216.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" />
+      <Button fx:id="agiplus" layoutX="536.0" layoutY="92.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" />
+      <Button fx:id="agiminus" layoutX="497.0" layoutY="92.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" />
+      <Button fx:id="defplus" layoutX="536.0" layoutY="131.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" />
+      <Button fx:id="defminus" layoutX="497.0" layoutY="131.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" />
+
       <Text fx:id="vitPoints" layoutX="427.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875" />
       <Text fx:id="defPoints" layoutX="427.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875" />
       <Text fx:id="agiPoints" layoutX="427.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875" />

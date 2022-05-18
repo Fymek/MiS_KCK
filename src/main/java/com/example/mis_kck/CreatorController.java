@@ -59,7 +59,7 @@ public class CreatorController  implements Initializable {
     private Text totalPoints;
 
     private byte total = 10;
-    Postac postac;
+    Postac postac = new Postac();
     ArrayList<Button> buttonPlus;
     ArrayList<Button> buttonMinus;
     @Override
