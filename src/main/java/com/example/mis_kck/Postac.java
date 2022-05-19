@@ -6,11 +6,13 @@ public class Postac {
         MEDIUM,
         HIGH
     }
-    private byte stat_HP = 1;
     private byte stat_SILA = 1;
-    private byte stat_ENERGIA = 1;
     private byte stat_ZWINNOSC = 1;
     private byte stat_OBRONA = 1;
+    private byte stat_HP = 1;
+
+    private byte stat_ENERGIA = 1;
+
     private byte do_rozdania = 10;
 
     public byte getStat_HP() {

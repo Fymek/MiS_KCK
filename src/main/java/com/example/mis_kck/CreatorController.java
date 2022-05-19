@@ -2,13 +2,19 @@ package com.example.mis_kck;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -57,11 +63,41 @@ public class CreatorController  implements Initializable {
     private Text staPoints;
     @FXML
     private Text totalPoints;
-
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
     private byte total = 10;
 
     public Postac getPostac() {
         return postac;
+    }
+    public void switchToStart(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("start.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToKreator(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Kreator.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToKreator_1(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("kreator_1.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToWalka(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("walka.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     Postac postac = new Postac();
@@ -88,35 +124,30 @@ public class CreatorController  implements Initializable {
                     byte a = postac.getStat_HP();
                     a++;
                     postac.setStat_HP(a);
-                    total--;
                     vitPoints.setText("" + postac.getStat_HP());
                 } else if (strplus.equals(button)) {
                     byte b = postac.getStat_SILA();
                     b++;
                     postac.setStat_SILA(b);
-                    total--;
                     strPoints.setText("" + postac.getStat_SILA());
                 } else if (staplus.equals(button)) {
                     byte c = postac.getStat_ENERGIA();
                     c++;
                     postac.setStat_ENERGIA(c);
-                    total--;
                     staPoints.setText("" + postac.getStat_ENERGIA());
                 } else if (agiplus.equals(button)) {
                     byte d = postac.getStat_ZWINNOSC();
                     d++;
                     postac.setStat_ZWINNOSC(d);
-                    total--;
                     agiPoints.setText("" + postac.getStat_ZWINNOSC());
                 } else if (defplus.equals(button)) {
                     byte e = postac.getStat_OBRONA();
                     e++;
                     postac.setStat_OBRONA(e);
                     defPoints.setText("" + postac.getStat_OBRONA());
-                    total--;
                 }
+                total--;
                 totalPoints.setText(""+total);
-
             }
 
         });
@@ -127,43 +158,48 @@ public class CreatorController  implements Initializable {
             if(total<10){
                 if (vitminus.equals(button)) {
                     byte a = postac.getStat_HP();
-                    if(a>0) {
+                    if(a>1) {
                         a--;
                         postac.setStat_HP(a);
-                        total++;
                         vitPoints.setText("" + postac.getStat_HP());
+                        total++;
+
                     }
                 } else if (strminus.equals(button)) {
                     byte b = postac.getStat_SILA();
-                    if(b>0) {
+                    if(b>1) {
                         b--;
                         postac.setStat_SILA(b);
-                        total++;
                         strPoints.setText("" + postac.getStat_SILA());
+                        total++;
+
                     }
                 } else if (staminus.equals(button)) {
                     byte c = postac.getStat_ENERGIA();
-                    c--;
-                    if(c>0) {
+                    if(c>1) {
+                        c--;
                         postac.setStat_ENERGIA(c);
-                        total++;
                         staPoints.setText("" + postac.getStat_ENERGIA());
+                        total++;
+
                     }
                 } else if (agiminus.equals(button)) {
                     byte d = postac.getStat_ZWINNOSC();
-                    d--;
-                    if(d>0) {
+                    if(d>1) {
+                        d--;
                         postac.setStat_ZWINNOSC(d);
-                        total++;
                         agiPoints.setText("" + postac.getStat_ZWINNOSC());
+                        total++;
+
                     }
                 } else if (defminus.equals(button)) {
                     byte e = postac.getStat_OBRONA();
-                    e--;
-                    if(e>0) {
+                    if(e>1) {
+                        e--;
                         postac.setStat_OBRONA(e);
                         defPoints.setText("" + postac.getStat_OBRONA());
                         total++;
+
                     }
                 }
                 totalPoints.setText(""+total);
