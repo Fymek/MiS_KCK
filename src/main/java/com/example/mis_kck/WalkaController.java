@@ -31,7 +31,10 @@ public class WalkaController {
     Postac postac1,postac2;
     int tura;
 
-
+    public void updatePlayers(Postac p1, Postac p2){
+        this.postac1 =p1;
+        this.postac2 =p2;
+    }
 
 //    @Override
 //    public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.ImageCursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -99,15 +101,16 @@ public class CreatorController  implements Initializable {
         stage.show();
     }
     public void switchToWalka(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("walka.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("walka.fxml"));
+        root = loader.load();
+
+
+        WalkaController walkaController = loader.getController();
+        walkaController.updatePlayers(player1,player2);
         scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        player2.setStat_HP((byte)Integer.parseInt(vitPoints.getText()));
-        player2.setStat_ENERGIA((byte)Integer.parseInt(staPoints.getText()));
-        player2.setStat_OBRONA((byte)Integer.parseInt(defPoints.getText()));
-        player2.setStat_SILA((byte)Integer.parseInt(strPoints.getText()));
-        player2.setStat_ZWINNOSC((byte)Integer.parseInt(agiPoints.getText()));
         stage.show();
     }
 
