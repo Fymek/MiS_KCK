@@ -1,6 +1,7 @@
 package com.example.mis_kck;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
@@ -30,7 +31,16 @@ public class WalkaController {
     private Text manabar1;
     Postac postac1,postac2;
     int tura;
-
+    private void loadPostac1(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("kreator.fxml"));
+        CreatorController postac = loader.getController();
+        postac1=postac.getPostac();
+    }
+    private void loadPostac2(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("kreator_1.fxml"));
+        CreatorController postac = loader.getController();
+        postac2=postac.getPostac();
+    }
 
 
 //    @Override
