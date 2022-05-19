@@ -67,6 +67,7 @@ public class CreatorController  implements Initializable {
     private Scene scene;
     private Parent root;
     private byte total = 10;
+    private Postac player1, player2;
 
     public Postac getPostac() {
         return postac;
@@ -90,6 +91,11 @@ public class CreatorController  implements Initializable {
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        player1.setStat_HP((byte)Integer.parseInt(vitPoints.getText()));
+        player1.setStat_ENERGIA((byte)Integer.parseInt(staPoints.getText()));
+        player1.setStat_OBRONA((byte)Integer.parseInt(defPoints.getText()));
+        player1.setStat_SILA((byte)Integer.parseInt(strPoints.getText()));
+        player1.setStat_ZWINNOSC((byte)Integer.parseInt(agiPoints.getText()));
         stage.show();
     }
     public void switchToWalka(ActionEvent event) throws IOException {
@@ -97,6 +103,11 @@ public class CreatorController  implements Initializable {
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        player2.setStat_HP((byte)Integer.parseInt(vitPoints.getText()));
+        player2.setStat_ENERGIA((byte)Integer.parseInt(staPoints.getText()));
+        player2.setStat_OBRONA((byte)Integer.parseInt(defPoints.getText()));
+        player2.setStat_SILA((byte)Integer.parseInt(strPoints.getText()));
+        player2.setStat_ZWINNOSC((byte)Integer.parseInt(agiPoints.getText()));
         stage.show();
     }
 
