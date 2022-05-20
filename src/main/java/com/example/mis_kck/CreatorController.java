@@ -4,15 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.ImageCursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -23,14 +19,7 @@ import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class CreatorController  implements Initializable {
-//    @FXML
-//    private Label welcomeText;
-//
-//    @FXML
-//    private ImageView confirmButton;
-//
-//    @FXML
-//    private Pane panel;
+
     @FXML
     private Button strplus;
     @FXML
@@ -45,14 +34,12 @@ public class CreatorController  implements Initializable {
     private Button staminus;
     @FXML
     private Button agiplus;
-
     @FXML
     private Button agiminus;
     @FXML
     private Button defplus;
     @FXML
     private Button defminus;
-
     @FXML
     private Text vitPoints;
     @FXML
@@ -64,6 +51,7 @@ public class CreatorController  implements Initializable {
     @FXML
     private Text staPoints;
     @FXML
+
     private Text totalPoints;
     private Stage stage;
     private Scene scene;
@@ -73,6 +61,10 @@ public class CreatorController  implements Initializable {
 
     public Postac getPostac() {
         return postac;
+    }
+    public void updatePlayers(Postac p1, Postac p2){
+        this.player1 =p1;
+        this.player2 =p2;
     }
     public void switchToStart(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("start.fxml"));
@@ -89,27 +81,41 @@ public class CreatorController  implements Initializable {
         stage.show();
     }
     public void switchToKreator_1(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("kreator_1.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+//        root = FXMLLoader.load(getClass().getResource("kreator_1.fxml"));
+//        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+//        scene = new Scene(root);
+//        stage.setScene(scene);
+//        player1.setStat_HP((byte)Integer.parseInt(vitPoints.getText()));
+//        player1.setStat_ENERGIA((byte)Integer.parseInt(staPoints.getText()));
+//        player1.setStat_OBRONA((byte)Integer.parseInt(defPoints.getText()));
+//        player1.setStat_SILA((byte)Integer.parseInt(strPoints.getText()));
+//        player1.setStat_ZWINNOSC((byte)Integer.parseInt(agiPoints.getText()));
+//        stage.show();
+        player1 = getPostac();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("kreator_1.fxml"));
+        root = loader.load();
+
+
+        CreatorController creatorController = loader.getController();
+        creatorController.updatePlayers(player1,player2);
         scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        player1.setStat_HP((byte)Integer.parseInt(vitPoints.getText()));
-        player1.setStat_ENERGIA((byte)Integer.parseInt(staPoints.getText()));
-        player1.setStat_OBRONA((byte)Integer.parseInt(defPoints.getText()));
-        player1.setStat_SILA((byte)Integer.parseInt(strPoints.getText()));
-        player1.setStat_ZWINNOSC((byte)Integer.parseInt(agiPoints.getText()));
         stage.show();
     }
     public void switchToWalka(ActionEvent event) throws IOException {
 
+        player2 = getPostac();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("walka.fxml"));
         root = loader.load();
 
 
         WalkaController walkaController = loader.getController();
         walkaController.updatePlayers(player1,player2);
-        scene = new Scene(root);
+        walkaController.updateStatus();
+
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
@@ -222,16 +228,4 @@ public class CreatorController  implements Initializable {
 
         });
     }
-
-
-
-
-//    @FXML
-//    protected void onConfirmButtonClick(Stage stage) throws IOException {
-//        panel = new Pane(getClass().getResource("walka.fxml"));
-//        Scene scene = new Scene(panel);
-//        stage.setTitle("Widły i Kapcie!");
-//        stage.setScene(scene);
-//        stage.show();
-//    }
 }

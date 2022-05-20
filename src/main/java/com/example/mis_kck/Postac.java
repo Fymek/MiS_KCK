@@ -2,29 +2,18 @@ package com.example.mis_kck;
 
 public class Postac {
     enum Rodzaj_ataku {
-        LOW,
+        QUICK,
         MEDIUM,
-        HIGH
+        POWER
     }
     private byte stat_SILA = 1;
     private byte stat_ZWINNOSC = 1;
     private byte stat_OBRONA = 1;
     private byte stat_HP = 1;
-
     private byte stat_ENERGIA = 1;
-
-    private byte do_rozdania = 10;
 
     public byte getStat_HP() {
         return stat_HP;
-    }
-
-    public byte getDo_rozdania() {
-        return do_rozdania;
-    }
-
-    public void setDo_rozdania(byte do_rozdania) {
-        this.do_rozdania = do_rozdania;
     }
 
     public void setStat_HP(byte stat_HP) {
@@ -63,26 +52,32 @@ public class Postac {
         this.stat_OBRONA = stat_OBRONA;
     }
 
-    public void atak(Postac przeciwnik,Rodzaj_ataku typ) {
+    public int atak(Postac przeciwnik,Rodzaj_ataku typ) {
         //  todo radnom 1/5
-        if(typ == Rodzaj_ataku.LOW ){
-            przeciwnik.stat_HP-= (this.stat_SILA * 3)/przeciwnik.stat_OBRONA;
+            int damage = 0;
+        if(typ == Rodzaj_ataku.QUICK ){
+            damage = (this.stat_SILA )/przeciwnik.stat_OBRONA;
+            przeciwnik.stat_HP-= damage;
         }
-        if(typ == Rodzaj_ataku.MEDIUM ){
-            przeciwnik.stat_HP-= (this.stat_SILA * 3)/przeciwnik.stat_OBRONA;
+        else if(typ == Rodzaj_ataku.MEDIUM ){
+            damage = (this.stat_SILA * 2)/przeciwnik.stat_OBRONA;
+            przeciwnik.stat_HP-= damage;
         }
-        if(typ == Rodzaj_ataku.HIGH ){
-            przeciwnik.stat_HP-= (this.stat_SILA * 3)/przeciwnik.stat_OBRONA;
+        else if(typ == Rodzaj_ataku.POWER ){
+            damage = (this.stat_SILA * 3)/przeciwnik.stat_OBRONA;
+
+            przeciwnik.stat_HP-= damage;
         }
+        return damage;
+
     }
     public void blok() {
        this.stat_OBRONA *=2; // todo trzeba usunac tego busta po rundzie
     }
-    public void move_right() {
-       // todo wiadomo
-    }
-    public void move_left() {
-        // todo wiadomo
+    public void sleep(){
+        byte count = getStat_ENERGIA();
+        count++;
+        setStat_ENERGIA(count);
     }
 }
 
