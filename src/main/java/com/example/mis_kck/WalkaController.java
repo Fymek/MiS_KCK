@@ -76,9 +76,9 @@ public class WalkaController implements Initializable{
         this.player2 = p2;
     }
     public void updateStatus(){
-        this.hpbar1.setText(""+player1.getStat_HP());
+        this.hpbar1.setText(""+player1.getStat_HP_fight());
         this.manabar1.setText(""+player1.getStat_ENERGIA());
-        this.hpbar2.setText(""+player2.getStat_HP());
+        this.hpbar2.setText(""+player2.getStat_HP_fight());
         this.manabar2.setText(""+player2.getStat_ENERGIA());
         if(tura == 1) {
             player1Text.setFill(Color.GREEN);
@@ -102,6 +102,7 @@ public class WalkaController implements Initializable{
                     event -> damagePane2.setVisible(false)
             );
             visiblePause.play();
+            checkIfGameIsOver();
 
         }
         else if(tura == -1){
@@ -111,6 +112,7 @@ public class WalkaController implements Initializable{
                     event -> damagePane1.setVisible(false)
             );
             visiblePause.play();
+            checkIfGameIsOver();
         }
 
     }
@@ -155,22 +157,26 @@ public class WalkaController implements Initializable{
                 postac.sleep();
                 showSleep();
                 tura *= -1;
+                if(przeciwnik.flag==1) przeciwnik.blok();
                 updateStatus();
             } else if (attackQuick.equals(button)) {
                 int damage = postac.atak(przeciwnik, Postac.Rodzaj_ataku.QUICK);
                 showDamage(damage);
                 tura *= -1;
+                if(przeciwnik.flag==1) przeciwnik.blok();
                 updateStatus();
 
             } else if (attackMedium.equals(button)) {
                 int damage =postac.atak(przeciwnik, Postac.Rodzaj_ataku.MEDIUM);
                 showDamage(damage);
                 tura *= -1;
+                if(przeciwnik.flag==1) przeciwnik.blok();
                 updateStatus();
             } else if (attackPower.equals(button)) {
                 int damage =postac.atak(przeciwnik, Postac.Rodzaj_ataku.POWER);
                 showDamage(damage);
                 tura *= -1;
+                if(przeciwnik.flag==1) przeciwnik.blok();
                 updateStatus();
             } else if (blockButton.equals(button)) {
                 postac.blok();
@@ -191,14 +197,14 @@ public class WalkaController implements Initializable{
         }
     }
     public void checkIfGameIsOver(){
-        if(player1.getStat_HP() <= 0){
+        if(player1.getStat_HP_fight() <= 0){
             winnerText.setText("PLAYER 2 WON!");
             buttons.forEach(button ->{
                 button.setFocusTraversable(false);
                 button.setDisable(true);
             });
         }
-        if(player2.getStat_HP() <= 0){
+        if(player2.getStat_HP_fight() <= 0){
             winnerText.setText("PLAYER 1 WON!");
             buttons.forEach(button ->{
                 button.setFocusTraversable(false);

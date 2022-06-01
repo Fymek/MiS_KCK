@@ -144,6 +144,7 @@ public class CreatorController  implements Initializable {
                     byte a = postac.getStat_HP();
                     a++;
                     postac.setStat_HP(a);
+                    postac.setStat_HP_fight(a);
                     vitPoints.setText("" + postac.getStat_HP());
                 } else if (strplus.equals(button)) {
                     byte b = postac.getStat_SILA();
@@ -181,6 +182,7 @@ public class CreatorController  implements Initializable {
                     if(a>1) {
                         a--;
                         postac.setStat_HP(a);
+                        postac.setStat_HP_fight(a);
                         vitPoints.setText("" + postac.getStat_HP());
                         total++;
 

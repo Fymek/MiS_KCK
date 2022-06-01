@@ -12,7 +12,7 @@ public class CreatorApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("start.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Widły i Kapcie IV");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
 
