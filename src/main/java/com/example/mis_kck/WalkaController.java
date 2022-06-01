@@ -163,6 +163,7 @@ public class WalkaController implements Initializable{
                 int damage = postac.atak(przeciwnik, Postac.Rodzaj_ataku.QUICK);
                 showDamage(damage);
                 tura *= -1;
+                postac.setStat_ENERGIA((byte)(postac.getStat_ENERGIA()-1));
                 if(przeciwnik.flag==1) przeciwnik.blok();
                 updateStatus();
 
@@ -170,19 +171,25 @@ public class WalkaController implements Initializable{
                 int damage =postac.atak(przeciwnik, Postac.Rodzaj_ataku.MEDIUM);
                 showDamage(damage);
                 tura *= -1;
+                postac.setStat_ENERGIA((byte)(postac.getStat_ENERGIA()-1));
                 if(przeciwnik.flag==1) przeciwnik.blok();
                 updateStatus();
             } else if (attackPower.equals(button)) {
                 int damage =postac.atak(przeciwnik, Postac.Rodzaj_ataku.POWER);
                 showDamage(damage);
                 tura *= -1;
+                postac.setStat_ENERGIA((byte)(postac.getStat_ENERGIA()-1));
                 if(przeciwnik.flag==1) przeciwnik.blok();
                 updateStatus();
             } else if (blockButton.equals(button)) {
-                postac.blok();
-                showTarcza();
-                tura *= -1;
-                updateStatus();
+                if(postac.flag==1) doAction(postac, przeciwnik);
+                else {
+                    postac.blok();
+                    showTarcza();
+                    tura *= -1;
+                    postac.setStat_ENERGIA((byte) (postac.getStat_ENERGIA() - 1));
+                    updateStatus();
+                }
             }
         }));
         checkIfGameIsOver();
@@ -190,10 +197,24 @@ public class WalkaController implements Initializable{
     @FXML
     public void takeTurn(ActionEvent actionEvent){
         if(tura == 1){
-            doAction(player1,player2);
+            if(player1.getStat_ENERGIA()<=0) {
+                player1.sleep();
+                showSleep();
+                tura*=-1;
+                if(player2.flag==1) player2.blok();
+                updateStatus();
+            }
+            else doAction(player1,player2);
         }
         else if(tura == -1){
-            doAction(player2,player1);
+            if(player2.getStat_ENERGIA()<=0) {
+                player2.sleep();
+                showSleep();
+                tura*=-1;
+                if(player1.flag==1) player1.blok();
+                updateStatus();
+            }
+            else doAction(player2,player1);
         }
     }
     public void checkIfGameIsOver(){
