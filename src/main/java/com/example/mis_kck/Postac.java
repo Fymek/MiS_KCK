@@ -67,21 +67,22 @@ public class Postac {
         Random rand = new Random();
         int damage = 0;
         int chance = rand.nextInt(100);
+        int atak = rand.nextInt(3) + 1;
         if(typ == Rodzaj_ataku.QUICK ){
             if(chance<70+(5*this.stat_ZWINNOSC)) {
-                damage = (this.stat_SILA * 3) / przeciwnik.stat_OBRONA;
+                damage = (atak*(this.stat_SILA)) / przeciwnik.stat_OBRONA;
                 przeciwnik.stat_HP_fight -= damage;
             }
         }
         else if(typ == Rodzaj_ataku.MEDIUM ){
             if(chance<50+(5*this.stat_ZWINNOSC)) {
-                damage = (this.stat_SILA * 6) / przeciwnik.stat_OBRONA;
+                damage = (3*atak*(this.stat_SILA)) / przeciwnik.stat_OBRONA;
                 przeciwnik.stat_HP_fight -= damage;
             }
         }
         else if(typ == Rodzaj_ataku.POWER ){
             if(chance<30+(5*this.stat_ZWINNOSC)) {
-                damage = (this.stat_SILA * 10) / przeciwnik.stat_OBRONA;
+                damage = (6*atak*(this.stat_SILA)) / przeciwnik.stat_OBRONA;
                 przeciwnik.stat_HP_fight -= damage;
             }
         }
@@ -102,7 +103,7 @@ public class Postac {
     }
     public void sleep(){
         byte count = getStat_ENERGIA();
-        count++;
+        count+=3;
         setStat_ENERGIA(count);
     }
 }

@@ -93,7 +93,28 @@ public class WalkaController implements Initializable{
     PauseTransition visiblePause = new PauseTransition(
             Duration.seconds(1.5)
     );
-
+    public void offButtons()
+    {
+        buttons.get(1).setFocusTraversable(false);
+        buttons.get(1).setDisable(true);
+        buttons.get(2).setFocusTraversable(false);
+        buttons.get(2).setDisable(true);
+        buttons.get(3).setFocusTraversable(false);
+        buttons.get(3).setDisable(true);
+        buttons.get(4).setFocusTraversable(false);
+        buttons.get(4).setDisable(true);
+    }
+    public void onButtons()
+    {
+        buttons.get(1).setFocusTraversable(true);
+        buttons.get(1).setDisable(false);
+        buttons.get(2).setFocusTraversable(true);
+        buttons.get(2).setDisable(false);
+        buttons.get(3).setFocusTraversable(true);
+        buttons.get(3).setDisable(false);
+        buttons.get(4).setFocusTraversable(true);
+        buttons.get(4).setDisable(false);
+    }
     public void showDamage(int damage){
         if(tura == 1){
             damage2.setText(""+damage);
@@ -193,29 +214,19 @@ public class WalkaController implements Initializable{
             }
         }));
         checkIfGameIsOver();
+        if(przeciwnik.getStat_ENERGIA()<=0) offButtons();
+        else onButtons();
+        updateStatus();
     }
     @FXML
     public void takeTurn(ActionEvent actionEvent){
         if(tura == 1){
-            if(player1.getStat_ENERGIA()<=0) {
-                player1.sleep();
-                showSleep();
-                tura*=-1;
-                if(player2.flag==1) player2.blok();
-                updateStatus();
-            }
-            else doAction(player1,player2);
+            doAction(player1,player2);
         }
         else if(tura == -1){
-            if(player2.getStat_ENERGIA()<=0) {
-                player2.sleep();
-                showSleep();
-                tura*=-1;
-                if(player1.flag==1) player1.blok();
-                updateStatus();
-            }
-            else doAction(player2,player1);
+            doAction(player2,player1);
         }
+        updateStatus();
     }
     public void checkIfGameIsOver(){
         if(player1.getStat_HP_fight() <= 0){
