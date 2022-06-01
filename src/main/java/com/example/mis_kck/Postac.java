@@ -17,7 +17,7 @@ public class Postac {
     private byte stat_HP = 1;
     private byte stat_ENERGIA = 1;
     private byte stat_HP_fight = (byte)(10*stat_HP);
-    int flag=0;
+    int flag=1;
 
 
     public byte getStat_HP() {
@@ -70,19 +70,19 @@ public class Postac {
         int atak = rand.nextInt(3) + 1;
         if(typ == Rodzaj_ataku.QUICK ){
             if(chance<70+(5*this.stat_ZWINNOSC)) {
-                damage = (atak*(this.stat_SILA)) / przeciwnik.stat_OBRONA;
+                damage = (atak*(this.stat_SILA)) / (przeciwnik.stat_OBRONA*przeciwnik.flag);
                 przeciwnik.stat_HP_fight -= damage;
             }
         }
         else if(typ == Rodzaj_ataku.MEDIUM ){
             if(chance<50+(5*this.stat_ZWINNOSC)) {
-                damage = (3*atak*(this.stat_SILA)) / przeciwnik.stat_OBRONA;
+                damage = (3*atak*(this.stat_SILA)) / (przeciwnik.stat_OBRONA*przeciwnik.flag);
                 przeciwnik.stat_HP_fight -= damage;
             }
         }
         else if(typ == Rodzaj_ataku.POWER ){
             if(chance<30+(5*this.stat_ZWINNOSC)) {
-                damage = (6*atak*(this.stat_SILA)) / przeciwnik.stat_OBRONA;
+                damage = (6*atak*(this.stat_SILA)) / (przeciwnik.stat_OBRONA*przeciwnik.flag);
                 przeciwnik.stat_HP_fight -= damage;
             }
         }
@@ -90,16 +90,8 @@ public class Postac {
 
     }
     public void blok() {
-        if(flag==0)
-        {
-            this.stat_OBRONA *=2;
-            flag=1;
-        }
-        else
-        {
-            this.stat_OBRONA/=2;
-            flag=0;
-        }
+        if(flag==1) flag=2;
+        else flag=1;
     }
     public void sleep(){
         byte count = getStat_ENERGIA();

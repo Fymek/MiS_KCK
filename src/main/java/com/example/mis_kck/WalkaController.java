@@ -178,14 +178,14 @@ public class WalkaController implements Initializable{
                 postac.sleep();
                 showSleep();
                 tura *= -1;
-                if(przeciwnik.flag==1) przeciwnik.blok();
+                if(przeciwnik.flag==2) przeciwnik.blok();
                 updateStatus();
             } else if (attackQuick.equals(button)) {
                 int damage = postac.atak(przeciwnik, Postac.Rodzaj_ataku.QUICK);
                 showDamage(damage);
                 tura *= -1;
                 postac.setStat_ENERGIA((byte)(postac.getStat_ENERGIA()-1));
-                if(przeciwnik.flag==1) przeciwnik.blok();
+                if(przeciwnik.flag==2) przeciwnik.blok();
                 updateStatus();
 
             } else if (attackMedium.equals(button)) {
@@ -193,17 +193,17 @@ public class WalkaController implements Initializable{
                 showDamage(damage);
                 tura *= -1;
                 postac.setStat_ENERGIA((byte)(postac.getStat_ENERGIA()-1));
-                if(przeciwnik.flag==1) przeciwnik.blok();
+                if(przeciwnik.flag==2) przeciwnik.blok();
                 updateStatus();
             } else if (attackPower.equals(button)) {
                 int damage =postac.atak(przeciwnik, Postac.Rodzaj_ataku.POWER);
                 showDamage(damage);
                 tura *= -1;
                 postac.setStat_ENERGIA((byte)(postac.getStat_ENERGIA()-1));
-                if(przeciwnik.flag==1) przeciwnik.blok();
+                if(przeciwnik.flag==2) przeciwnik.blok();
                 updateStatus();
             } else if (blockButton.equals(button)) {
-                if(postac.flag==1) doAction(postac, przeciwnik);
+                if(postac.flag==2) doAction(postac, przeciwnik);
                 else {
                     postac.blok();
                     showTarcza();
