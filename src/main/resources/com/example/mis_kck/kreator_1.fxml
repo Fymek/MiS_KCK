@@ -56,8 +56,8 @@
             <Font name="System Bold" size="23.0" />
          </font></Text>
 
-      <Button fx:id="confirm1" layoutX="425.0" layoutY="431.0" mnemonicParsing="false" onAction="#switchToWalka"   prefHeight="125.0" prefWidth="174.0"   style="-fx-background-image: url(confirm.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
-      <Button fx:id="decline1" layoutX="616.0" layoutY="431.0" mnemonicParsing="false" onAction="#switchToKreator" prefHeight="125.0" prefWidth="159.0" style="-fx-background-image: url(decline.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+      <Button fx:id="confirm1" layoutX="600" layoutY="500" mnemonicParsing="false" onAction="#switchToWalka"   prefHeight="72" prefWidth="72"   style="-fx-background-image: url(confirm.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+      <Button fx:id="decline1" layoutX="700" layoutY="500" mnemonicParsing="false" onAction="#switchToKreator" prefHeight="72" prefWidth="72" style="-fx-background-image: url(decline.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
 
       <ImageView fitHeight="500.0" fitWidth="331.0" layoutX="25.0" layoutY="60.0">
          <image>
