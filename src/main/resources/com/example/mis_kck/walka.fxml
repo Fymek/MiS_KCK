@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mis_kck.WalkaController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mis_kck.WalkaController">
    <children>
       <ImageView fx:id="tarcza2" fitHeight="600.0" fitWidth="800.0">
          <image>
@@ -32,14 +30,14 @@
                   <Image url="@../../../images/paski_1.png" />
                </image>
             </ImageView>
-            <Text fx:id="hpbar1" fill="WHITE" layoutX="58.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="98.93670654296875">
+            <Text fx:id="hpbar1" fill="WHITE" layoutX="58.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="98.93670654296875">
                <font>
-                  <Font size="20.0" />
+                  <Font name="Berlin Sans FB" size="20.0" />
                </font>
             </Text>
             <Text fx:id="manabar1" layoutX="58.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="98.93670654296875">
                <font>
-                  <Font size="20.0" />
+                  <Font name="Berlin Sans FB" size="20.0" />
                </font>
             </Text>
          </children>
@@ -51,14 +49,14 @@
                   <Image url="@../../../images/paski_2.png" />
                </image>
             </ImageView>
-            <Text fx:id="hpbar2" fill="WHITE" layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="98.93670654296875">
+            <Text fx:id="hpbar2" fill="WHITE" layoutX="65.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="98.93670654296875">
                <font>
-                  <Font size="20.0" />
+                  <Font name="Berlin Sans FB" size="20.0" />
                </font>
             </Text>
-            <Text fx:id="manabar2" layoutX="14.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="98.93670654296875">
+            <Text fx:id="manabar2" layoutX="66.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="98.93670654296875">
                <font>
-                  <Font size="20.0" />
+                  <Font name="Berlin Sans FB" size="20.0" />
                </font>
             </Text>
          </children>
@@ -70,42 +68,42 @@
                   <Image url="@../../../images/pasek.png" />
                </image>
             </ImageView>
-            <Button fx:id="attackPower" layoutX="475.0" layoutY="16.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#takeTurn" prefHeight="79.0" prefWidth="81.0" style="-fx-background-image: url(atack_power.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;">
+            <Button fx:id="attackPower" layoutX="465.0" layoutY="22.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#takeTurn" prefHeight="79.0" prefWidth="81.0" style="-fx-background-image: url(atack_power.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;">
                <font>
                   <Font size="45.0" />
                </font>
             </Button>
-            <Button fx:id="attackMedium" layoutX="375.0" layoutY="16.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#takeTurn" prefHeight="79.0" prefWidth="81.0" style="-fx-background-image: url(atack_normal.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;">
+            <Button fx:id="attackMedium" layoutX="365.0" layoutY="22.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#takeTurn" prefHeight="79.0" prefWidth="81.0" style="-fx-background-image: url(atack_normal.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;">
                <font>
                   <Font size="45.0" />
                </font>
             </Button>
-            <Button fx:id="attackQuick" layoutX="275.0" layoutY="16.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#takeTurn" prefHeight="79.0" prefWidth="81.0" style="-fx-background-image: url(atack_quick.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;">
+            <Button fx:id="attackQuick" layoutX="265.0" layoutY="22.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#takeTurn" prefHeight="79.0" prefWidth="81.0" style="-fx-background-image: url(atack_quick.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;">
                <font>
                   <Font size="45.0" />
                </font>
             </Button>
-            <Button fx:id="sleepButton" layoutX="175.0" layoutY="16.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#takeTurn" prefHeight="79.0" prefWidth="81.0" style="-fx-background-image: url(sleep.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;">
+            <Button fx:id="sleepButton" layoutX="165.0" layoutY="22.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#takeTurn" prefHeight="79.0" prefWidth="81.0" style="-fx-background-image: url(sleep.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;">
                <font>
                   <Font size="45.0" />
                </font>
             </Button>
-            <Button fx:id="blockButton" layoutX="575.0" layoutY="16.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#takeTurn" prefHeight="79.0" prefWidth="81.0" style="-fx-background-image: url(block.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;">
+            <Button fx:id="blockButton" layoutX="565.0" layoutY="22.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#takeTurn" prefHeight="79.0" prefWidth="81.0" style="-fx-background-image: url(block.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;">
                <font>
                   <Font size="45.0" />
                </font>
             </Button>
-            <Text fx:id="player1Text" fill="WHITE" layoutX="8.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player1" textAlignment="CENTER" wrappingWidth="135.13671875">
+            <Text fx:id="player1Text" fill="WHITE" layoutX="8.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1" textAlignment="CENTER" wrappingWidth="135.13671875">
                <font>
-                  <Font size="40.0" />
+                  <Font name="Berlin Sans FB" size="36.0" />
                </font>
                <effect>
                   <Glow />
                </effect>
             </Text>
-            <Text fx:id="player2Text" fill="WHITE" layoutX="656.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player2" textAlignment="CENTER" wrappingWidth="135.13671875">
+            <Text fx:id="player2Text" fill="WHITE" layoutX="656.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 2" textAlignment="CENTER" wrappingWidth="135.13671875">
                <font>
-                  <Font size="40.0" />
+                  <Font name="Berlin Sans FB" size="36.0" />
                </font>
                <effect>
                   <Glow />
@@ -127,7 +125,7 @@
             </ImageView>
             <Text fx:id="damage1" fill="WHITE" layoutX="15.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="135.13671875">
                <font>
-                  <Font size="40.0" />
+                  <Font name="Berlin Sans FB" size="40.0" />
                </font>
             </Text>
          </children>
@@ -141,7 +139,7 @@
             </ImageView>
             <Text fx:id="damage2" fill="WHITE" layoutX="15.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="135.13671875">
                <font>
-                  <Font size="40.0" />
+                  <Font name="Berlin Sans FB" size="40.0" />
                </font>
             </Text>
          </children>

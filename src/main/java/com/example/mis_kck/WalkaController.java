@@ -43,10 +43,10 @@ public class WalkaController implements Initializable{
         this.player2 = p2;
     }
     public void updateStatus(){
-        this.hpbar1.setText(""+player1.getStat_HP_fight());
-        this.manabar1.setText(""+player1.getStat_ENERGIA());
-        this.hpbar2.setText(""+player2.getStat_HP_fight());
-        this.manabar2.setText(""+player2.getStat_ENERGIA());
+        this.hpbar1.setText(" "+player1.getStat_HP_fight());
+        this.manabar1.setText(" "+player1.getStat_ENERGIA());
+        this.hpbar2.setText(" "+player2.getStat_HP_fight());
+        this.manabar2.setText(" "+player2.getStat_ENERGIA());
         if(tura == 1) {
             player1Text.setFill(Color.GREEN);
             player2Text.setFill(Color.RED);

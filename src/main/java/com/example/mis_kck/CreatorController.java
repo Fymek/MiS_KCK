@@ -50,8 +50,8 @@ public class CreatorController  implements Initializable {
     private Text strPoints;
     @FXML
     private Text staPoints;
-    @FXML
 
+    @FXML
     private Text totalPoints;
     private Stage stage;
     private Scene scene;
