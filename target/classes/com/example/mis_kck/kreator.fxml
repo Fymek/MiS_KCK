@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mis_kck.CreatorController">
+<Pane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mis_kck.CreatorController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
@@ -18,76 +17,45 @@
             <Image url="@../../../images/kerator_paski.png" />
          </image>
       </ImageView>
-<!--      <ImageView fx:id="strplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="50.0">-->
-<!--         <image>-->
-<!--            <Image url="@../../../images/buttons/plus.png" />-->
-<!--         </image>-->
-<!--      </ImageView>-->
-<!--      <ImageView fx:id="strminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="50.0">-->
-<!--         <image>-->
-<!--            <Image url="@../../../images/buttons/minus.png" />-->
-<!--         </image>-->
-<!--      </ImageView>-->
-<!--      <ImageView fx:id="vitplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="172.0">-->
-<!--         <image>-->
-<!--            <Image url="@../../../images/buttons/plus.png" />-->
-<!--         </image>-->
-<!--      </ImageView>-->
-<!--      <ImageView fx:id="vitminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="172.0">-->
-<!--         <image>-->
-<!--            <Image url="@../../../images/buttons/minus.png" />-->
-<!--         </image>-->
-<!--      </ImageView>-->
-<!--      <ImageView fx:id="staplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="216.0">-->
-<!--         <image>-->
-<!--            <Image url="@../../../images/buttons/plus.png" />-->
-<!--         </image>-->
-<!--      </ImageView>-->
-<!--      <ImageView fx:id="staminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="216.0">-->
-<!--         <image>-->
-<!--            <Image url="@../../../images/buttons/minus.png" />-->
-<!--         </image>-->
-<!--      </ImageView>-->
-<!--      <ImageView fx:id="agiplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="92.0">-->
-<!--         <image>-->
-<!--            <Image url="@../../../images/buttons/plus.png" />-->
-<!--         </image>-->
-<!--      </ImageView>-->
-<!--      <ImageView fx:id="agiminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="92.0">-->
-<!--         <image>-->
-<!--            <Image url="@../../../images/buttons/minus.png" />-->
-<!--         </image>-->
-<!--      </ImageView>-->
-<!--      <ImageView fx:id="defplus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="536.0" layoutY="131.0">-->
-<!--         <image>-->
-<!--            <Image url="@../../../images/buttons/plus.png" />-->
-<!--         </image>-->
-<!--      </ImageView>-->
-<!--      <ImageView fx:id="defminus" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="497.0" layoutY="131.0">-->
-<!--         <image>-->
-<!--            <Image url="@../../../images/buttons/minus.png" />-->
-<!--         </image>-->
-<!--      </ImageView>-->
 
-      <Button fx:id="strplus" layoutX="536.0" layoutY="50.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-      <Button fx:id="strminus" layoutX="497.0" layoutY="50.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-      <Button fx:id="vitplus" layoutX="536.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-      <Button fx:id="vitminus" layoutX="497.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-      <Button fx:id="staplus" layoutX="536.0" layoutY="216.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-      <Button fx:id="staminus" layoutX="497.0" layoutY="216.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-      <Button fx:id="agiplus" layoutX="536.0" layoutY="92.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-      <Button fx:id="agiminus" layoutX="497.0" layoutY="92.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-      <Button fx:id="defplus" layoutX="536.0" layoutY="131.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-      <Button fx:id="defminus" layoutX="497.0" layoutY="131.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+      <Button fx:id="strplus" layoutX="536.0" layoutY="50.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(plus.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+      <Button fx:id="strminus" layoutX="497.0" layoutY="50.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(minus.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+      <Button fx:id="vitplus" layoutX="536.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(plus.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+      <Button fx:id="vitminus" layoutX="497.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(minus.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+      <Button fx:id="staplus" layoutX="536.0" layoutY="216.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(plus.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+      <Button fx:id="staminus" layoutX="497.0" layoutY="216.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(minus.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+      <Button fx:id="agiplus" layoutX="536.0" layoutY="92.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(plus.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+      <Button fx:id="agiminus" layoutX="497.0" layoutY="92.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(minus.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+      <Button fx:id="defplus" layoutX="536.0" layoutY="131.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(plus.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+      <Button fx:id="defminus" layoutX="497.0" layoutY="131.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(minus.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
 
-      <Text fx:id="vitPoints" layoutX="427.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875" />
-      <Text fx:id="defPoints" layoutX="427.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875" />
-      <Text fx:id="agiPoints" layoutX="427.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875" />
-      <Text fx:id="strPoints" layoutX="427.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875" />
-      <Text fx:id="staPoints" layoutX="427.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875" />
-      <Text fx:id="totalPoints" layoutX="654.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER" wrappingWidth="90.13671875" />
-      <Button fx:id="confirm" layoutX="445.0" layoutY="431.0" mnemonicParsing="false" onAction="#switchToKreator_1" prefHeight="71.0" prefWidth="144.0" text="confirm" />
-      <Button fx:id="decline" layoutX="630.0" layoutY="431.0" mnemonicParsing="false" onAction="#switchToStart" prefHeight="71.0" prefWidth="138.0" text="decline" />
+      <Text fx:id="vitPoints" layoutX="427.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <Text fx:id="defPoints" layoutX="427.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <Text fx:id="agiPoints" layoutX="427.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <Text fx:id="strPoints" layoutX="427.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <Text fx:id="staPoints" layoutX="427.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="90.13671875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <Text fx:id="totalPoints" layoutX="650.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER" wrappingWidth="90.13671875">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font></Text>
+      <Button fx:id="confirm" layoutX="600.0" layoutY="500.0" mnemonicParsing="false" onAction="#switchToKreator_1" prefHeight="72" prefWidth="72" style="-fx-background-image: url(confirm.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+      <Button fx:id="decline" layoutX="700.0" layoutY="500.0" mnemonicParsing="false" onAction="#switchToStart" prefHeight="72" prefWidth="72" style="-fx-background-image: url(decline.png); -fx-background-size: 100% 100%; -fx-background-color: transparent; " />
+
       <ImageView fitHeight="496.0" fitWidth="427.0" layoutX="39.0" layoutY="62.0">
          <image>
             <Image url="@../../../images/postac_2.png.png" />

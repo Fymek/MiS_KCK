@@ -14,8 +14,8 @@ public class CreatorApplication extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("start.fxml"));
         primaryStage.setTitle("Widły i Kapcie IV");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
         primaryStage.show();
-
     }
 
     public static void main(String[] args) {
