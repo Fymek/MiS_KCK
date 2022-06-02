@@ -23,46 +23,13 @@ import java.util.ResourceBundle;
 public class WalkaController implements Initializable{
 
     @FXML
-    private Button sleepButton;
+    private Button sleepButton, attackQuick, attackMedium, attackPower, blockButton;
     @FXML
-    private Button attackQuick;
+    private Text hpbar1, hpbar2, manabar1, manabar2, winnerText, player1Text, player2Text, damage1, damage2;
     @FXML
-    private Button attackMedium;
+    private Pane damagePane2, damagePane1;
     @FXML
-    private Button attackPower;
-    @FXML
-    private Button blockButton;
-    @FXML
-    private Text hpbar1;
-    @FXML
-    private Text hpbar2;
-    @FXML
-    private Text manabar1;
-    @FXML
-    private Text manabar2;
-    @FXML
-    private Text winnerText;
-    @FXML
-    private Text player1Text;
-    @FXML
-    private Text player2Text;
-
-    @FXML
-    private Text damage1;
-    @FXML
-    private Text damage2;
-    @FXML
-    private Pane damagePane2;
-    @FXML
-    private Pane damagePane1;
-    @FXML
-    private ImageView tarcza1;
-    @FXML
-    private ImageView tarcza2;
-    @FXML
-    private ImageView sleepIcon1;
-    @FXML
-    private ImageView sleepIcon2;
+    private ImageView tarcza1, tarcza2, sleepIcon1, sleepIcon2;
 
     Postac player1,player2;
     int tura = 1;     //tura 1 dla player1; tura -1 dla player2
@@ -117,7 +84,7 @@ public class WalkaController implements Initializable{
     }
     public void showDamage(int damage){
         if(tura == 1){
-            damage2.setText(""+damage);
+            damage2.setText(""+(damage == 0 ? "MISS": damage));
             damagePane2.setVisible(true);
             visiblePause.setOnFinished(
                     event -> damagePane2.setVisible(false)
@@ -127,7 +94,7 @@ public class WalkaController implements Initializable{
 
         }
         else if(tura == -1){
-            damage1.setText(""+damage);
+            damage1.setText(""+(damage == 0 ? "MISS": damage));
             damagePane1.setVisible(true);
             visiblePause.setOnFinished(
                     event -> damagePane1.setVisible(false)
